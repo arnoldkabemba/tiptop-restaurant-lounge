@@ -1,0 +1,5 @@
+# DÉMONSTRATION — ne doit pas être référencée.
+# Cette copie sert uniquement à présenter le site au restaurant.
+# À la mise en ligne définitive, remplacer ce fichier par celui du projet.
+User-agent: *
+Disallow: /
