@@ -725,3 +725,33 @@ em{font-style:italic;font-variation-settings:"SOFT" 40,"WONK" 1}
   .carte-section{page-break-inside:avoid;border-bottom:1px solid #ccc}
   .carte-liste{grid-template-columns:repeat(2,1fr)}
 }
+
+/* --- Bloc plan d'accès (copie de démonstration) --------------------------
+   Le lecteur de la démo bloque les cadres externes : le plan interactif
+   est remplacé par une carte d'accès cliquable. Sur l'hébergement
+   définitif, l'iframe Google Maps du projet fonctionne normalement. */
+.plan-acces{
+  display:flex;flex-direction:column;justify-content:center;gap:1.25rem;
+  padding:clamp(1.75rem,4vw,2.5rem);
+  border:1px solid var(--trait-clair);border-radius:var(--r);
+  background:
+    radial-gradient(120% 90% at 85% 10%,rgba(199,154,69,.16),transparent 60%),
+    var(--noir-2);
+  position:relative;overflow:hidden;
+}
+.plan-acces::after{
+  content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:
+    repeating-linear-gradient(0deg,rgba(247,242,232,.05) 0 1px,transparent 1px 44px),
+    repeating-linear-gradient(90deg,rgba(247,242,232,.05) 0 1px,transparent 1px 44px);
+}
+.plan-acces > *{position:relative;z-index:1}
+.plan-acces__pin{width:34px;height:34px;color:var(--or)}
+.plan-acces h3{
+  font-family:var(--texte);font-size:.6875rem;letter-spacing:.2em;
+  text-transform:uppercase;font-weight:600;color:var(--creme-3);
+  font-variation-settings:normal;
+}
+.plan-acces p{font-size:1.0625rem;line-height:1.5;color:var(--creme)}
+.plan-acces small{font-size:.8125rem;color:var(--creme-3);display:block;margin-top:.4rem}
+.plan-acces .btn{align-self:flex-start}
